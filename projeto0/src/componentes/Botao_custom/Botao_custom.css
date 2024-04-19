@@ -1,0 +1,26 @@
+.botao-customizado {
+    padding: 16px 24px;
+    border: none;
+    cursor: pointer;
+    margin: 8px;
+    display: flex;
+        flex-direction: column;
+}
+
+.botao-customizado:hover {
+    opacity: 0.6;
+}
+
+.botao-customizado:active {
+    opacity: 1;
+}
+
+.botao-customizado-primario {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+}
+
+.botao-customizado-secundario {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+}

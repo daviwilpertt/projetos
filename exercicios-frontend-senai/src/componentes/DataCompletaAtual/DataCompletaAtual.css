@@ -1,0 +1,6 @@
+.dataCompleta{
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+    color: white;
+}

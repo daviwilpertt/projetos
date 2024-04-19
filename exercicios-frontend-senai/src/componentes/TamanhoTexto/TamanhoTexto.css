@@ -1,0 +1,6 @@
+.tamanhoTexto{
+    display: flex;
+    justify-content: right;
+    background-color: brown;
+    color: yellow;
+}

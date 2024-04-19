@@ -1,0 +1,19 @@
+main {
+  background-color: var(--cor-primaria-escura);
+  grid-area: principal;
+  display: flex;
+  }
+  
+  .divBotoes {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 10px;
+  }
+  
+  .divConteudo {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding: 10px;
+}
