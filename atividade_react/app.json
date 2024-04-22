@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "atividade_react_native",
-    "slug": "atividade_react_native",
+    "name": "atividade_react",
+    "slug": "atividade_react",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
