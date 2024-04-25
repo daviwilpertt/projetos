@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import BotaoCustom from '../../comum/componentes/BotaoCustom/BotaoCustom';
+import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
 import TELAS from '../../comum/constantes/telas';
 
 const TelaPrincipal = (props) => {
@@ -7,9 +7,18 @@ const TelaPrincipal = (props) => {
 
   return (
     <View>
-      <BotaoCustom cor='primaria' onPress={() => props.navigation.navigate(TELAS.TELA_CONTADOR)}>
+      <BotaoCustomizado cor='primaria' onPress={() => props.navigation.navigate(TELAS.TELA_CONTADOR)}>
         Tela Contador
-      </BotaoCustom>
+      </BotaoCustomizado>
+
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_FORMULARIO)}>
+        Tela Formulario
+      </BotaoCustomizado>
+
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_VEICULO)}>
+        Media Consumo Veicular
+      </BotaoCustomizado>
+
     </View>
   );
 };

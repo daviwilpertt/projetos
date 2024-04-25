@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import BotaoCustom from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
+import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
 import CORES from '../../comum/constantes/cores';
 
 const estilos = StyleSheet.create({
@@ -22,15 +22,15 @@ const TelaContador = () => {
 
   return (
     <View style={estilos.tudoTelaContador}>
-      <BotaoCustom cor='secundaria' onPress={() => setContador(contador - 1)}>
+      <BotaoCustomizado cor='secundaria' onPress={() => setContador(contador - 1)}>
         -
-      </BotaoCustom>
+      </BotaoCustomizado>
 
       <Text style={estilos.contador}>{contador}</Text>
 
-      <BotaoCustom cor='primaria' onPress={() => setContador(contador + 1)}>
+      <BotaoCustomizado cor='primaria' onPress={() => setContador(contador + 1)}>
         +
-      </BotaoCustom>
+      </BotaoCustomizado>
     </View>
   );
 };
