@@ -1,17 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import TELAS from './comum/constantes/telas';
+import TelaVeiculo from './telas/TelaVeiculo/TelaVeiculo';
+import TelaPrincipal from './telas/TelaPrincipal/TelaPrincipal';
+import TelaMoeda from './telas/TelaMoeda/TelaMoeda';
+import TelaMedida from './telas/TelaMedida/TelaMedida';
+import TelaNota from './telas/TelaNota/TelaNota';
+import TelaIMC from './telas/TelaIMC/TelaIMC';
 
 
 export default function App() {
 
   const Stack = createStackNavigator()
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Screen />
+        <Stack.Navigator>
+          <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} />
+          <Stack.Screen name={TELAS.TELA_VEICULO} component={TelaVeiculo} />
+          <Stack.Screen name={TELAS.TELA_MOEDA} component={TelaMoeda} />
+          <Stack.Screen name={TELAS.TELA_MEDIDA} component={TelaMedida} />
+          <Stack.Screen name={TELAS.TELA_NOTA} component={TelaNota} />
+          <Stack.Screen name={TELAS.TELA_IMC} component={TelaIMC} />
+        </Stack.Navigator>
       </NavigationContainer>
     </View>
   );
@@ -21,7 +36,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
 });
