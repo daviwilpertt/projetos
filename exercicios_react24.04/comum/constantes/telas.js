@@ -1,10 +1,12 @@
 const TELAS = {
-    TELA_PRINCIPAL: 'TELA_PRINCIPAL',
-    TELA_VEICULO: 'media de consumo veicular',
-    TELA_MOEDA: 'conversor de moeda',
-    TELA_MEDIDA: 'conversor de medidas',
-    TELA_NOTA: 'calcular media de notas',
-    TELA_IMC: 'calcular IMC',
+    TELA_PRINCIPAL: 'Tela Inicial',
+    TELA_VEICULO: 'Média Consumo de Combustível',
+    TELA_MOEDA: 'Conversor de moeda',
+    TELA_MEDIDA: 'Conversor de medidas',
+    TELA_NOTA: 'Calculadora de notas',
+    TELA_IMC: 'Calculadora IMC',
+    TELA_SALARIO: 'Calcular Reajuste Salarial',
+    TELA_CALCULADORA: 'Calculadora'
 };
 
 export default TELAS

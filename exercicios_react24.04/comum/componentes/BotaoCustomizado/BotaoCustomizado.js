@@ -3,18 +3,20 @@ import { Pressable, Text, StyleSheet } from 'react-native';
 const estilos = StyleSheet.create({
   botao: {
     padding: 16,
-    borderRadius: 8,
     margin: 5,
+    width: 320,
+  },
+  texto: {
+    fontSize: 20,
   },
 })
 
 
 const BotaoCustomizado = (props) => {
-  const estilosBotao = [estilos.botao];
 
   return (
-    <Pressable style={estilos.botao} onPress={props.onPress}>
-      <Text >{props.children}</Text>
+    <Pressable style={[estilos.botao, props.style]} onPress={props.onPress}>
+      <Text style={estilos.texto}>{props.children}</Text>
     </Pressable>
   );
 };

@@ -1,9 +1,27 @@
-import { Text, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native"
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import React from "react"
 import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado"
 
 const TelaMoeda = () => {
+
+    const estilos = StyleSheet.create({
+        tudo: {
+            flex: 1,
+            alignItems: 'center'
+
+        },
+        icone: {
+            alignItems: 'center'
+        },
+        input: {
+            padding: 10,
+            width: 300,
+            border: '2px solid black',
+            margin: 15,
+            fontSize: 20,
+        },
+    })
 
     let taxaDolar = 5.1
     let taxaEuro = 5.5
@@ -38,11 +56,11 @@ const TelaMoeda = () => {
 
    
     return (
-        <View>
-            <MaterialIcons name="attach-money" size={64} color='blue' />
-            <CampoTextoCustomizado label='Real' value={real} onChangeText={conversaoReal} />
-            <CampoTextoCustomizado label='Dolar' value={dolar} onChangeText={conversaoDolar} />
-            <CampoTextoCustomizado label='Euro' value={euro} onChangeText={conversaoEuro} />
+        <View style={estilos.tudo}>
+            <MaterialIcons style={estilos.icone} name="attach-money" size={64} color='blue' />
+            <CampoTextoCustomizado style={estilos.input} label='Real' value={real} onChangeText={conversaoReal} />
+            <CampoTextoCustomizado style={estilos.input} label='Dolar' value={dolar} onChangeText={conversaoDolar} />
+            <CampoTextoCustomizado style={estilos.input} label='Euro' value={euro} onChangeText={conversaoEuro} />
         </View>
     )
 }

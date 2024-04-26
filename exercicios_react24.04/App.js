@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import TELAS from './comum/constantes/telas';
@@ -9,14 +9,25 @@ import TelaMoeda from './telas/TelaMoeda/TelaMoeda';
 import TelaMedida from './telas/TelaMedida/TelaMedida';
 import TelaNota from './telas/TelaNota/TelaNota';
 import TelaIMC from './telas/TelaIMC/TelaIMC';
+import TelaSalario from './telas/TelaSalario/TelaSalario';
+import TelaCalculadora from './telas/TelaCalculadora/TelaCalculadora';
 
 
 export default function App() {
 
+  const estilos = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      textAlign: 'center'
+    },
+
+  });
+
   const Stack = createStackNavigator()
 
   return (
-    <View style={styles.container}>
+    <View style={estilos.container}>
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator>
@@ -26,16 +37,11 @@ export default function App() {
           <Stack.Screen name={TELAS.TELA_MEDIDA} component={TelaMedida} />
           <Stack.Screen name={TELAS.TELA_NOTA} component={TelaNota} />
           <Stack.Screen name={TELAS.TELA_IMC} component={TelaIMC} />
+          <Stack.Screen name={TELAS.TELA_SALARIO} component={TelaSalario} />
+          <Stack.Screen name={TELAS.TELA_CALCULADORA} component={TelaCalculadora} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    
-  },
-});
