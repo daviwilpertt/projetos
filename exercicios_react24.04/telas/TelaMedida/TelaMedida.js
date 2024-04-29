@@ -1,8 +1,35 @@
 import React from "react"
-import { View } from "react-native"
+import { StyleSheet, View } from "react-native"
 import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado"
+import Entypo from '@expo/vector-icons/Entypo'
 
 const TelaMedida = () => {
+
+    const estilos = StyleSheet.create({
+        tudo: {
+            flex: 1,
+            alignItems: 'center'
+
+        },
+        input: {
+            padding: 10,
+            width: 300,
+            border: '2px solid black',
+            margin: 15,
+            fontSize: 20,
+        },
+        icone: {
+            color: 'green',
+            margin: 10,
+        },
+        botao: {
+            backgroundColor: 'red',
+            alignItems: 'center',
+            borderRadius: 40,
+            width: 240,
+            margin: 15
+        },
+    })
 
     let [cm, setCm] = React.useState(0)
     let [m, setM] = React.useState(0)
@@ -32,10 +59,11 @@ const TelaMedida = () => {
         setCm(medidaCm)
     }
     return (
-        <View>
-            <CampoTextoCustomizado label='centimetros' value={cm} onChangeText={conversorCm} />
-            <CampoTextoCustomizado label='metros' value={m} onChangeText={conversorM} />
-            <CampoTextoCustomizado label='kilometros' value={km} onChangeText={conversorKm} />
+        <View style={estilos.tudo}>
+            <Entypo name='ruler' size={64} style={estilos.icone} />
+            <CampoTextoCustomizado style={estilos.input} label='centimetros' value={cm} onChangeText={conversorCm} />
+            <CampoTextoCustomizado style={estilos.input} label='metros' value={m} onChangeText={conversorM} />
+            <CampoTextoCustomizado style={estilos.input} label='kilometros' value={km} onChangeText={conversorKm} />
         </View>
     )
 }

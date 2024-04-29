@@ -1,10 +1,43 @@
 import React from "react";
-import { View, Text } from "react-native"
+import { View, Text, StyleSheet } from "react-native"
 import RNPickerSelect from 'react-native-picker-select';
 import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
+import SaidaRes from "../../comum/componentes/SaidaRes/SaidaRes";
 
 const TelaCalculadora = () => {
+
+    const estilos = StyleSheet.create({
+        tudo: {
+            flex: 1,
+            alignItems: 'center'
+
+        },
+        icone: {
+            alignItems: 'center'
+        },
+        input: {
+            padding: 10,
+            width: 300,
+            border: '2px solid black',
+            margin: 15,
+            fontSize: 20,
+        },
+        botao: {
+            backgroundColor: 'purple',
+            alignItems: 'center',
+            borderRadius: 40,
+            width: 240,
+            margin: 15
+        },
+        saida: {
+            fontSize: 20,
+            margin: 10,
+        },
+        select: {
+          backgroundColor: 'green',  
+        },
+    })
 
     let [campoOperacao, setCampoOperacao] = React.useState('');
     let [numero1, setNum1] = React.useState(0)
@@ -37,9 +70,9 @@ const TelaCalculadora = () => {
     }
 
     return (
-        <View>
-            <CampoTextoCustomizado label='numero 1' value={numero1} onChangeText={setNum1} />
-            <RNPickerSelect
+        <View style={estilos.tudo}>
+            <CampoTextoCustomizado style={estilos.input} label='numero 1' value={numero1} onChangeText={setNum1} />
+            <RNPickerSelect style={estilos.select}
                 onValueChange={setCampoOperacao}
                 value={campoOperacao}
                 items={[
@@ -50,10 +83,11 @@ const TelaCalculadora = () => {
                 ]}
                 placeholder={{ label: 'selecione uma operação', value: null }}
             />
-            <CampoTextoCustomizado label='numero 2' value={numero2} onChangeText={setNum2} />
-            <BotaoCustomizado label='calcular' onPress={calcular}>
+            <CampoTextoCustomizado style={estilos.input} label='numero 2' value={numero2} onChangeText={setNum2} />
+            <BotaoCustomizado style={estilos.botao} label='calcular' onPress={calcular}>
                 <Text>calcular</Text>
             </BotaoCustomizado>
+            <SaidaRes />
             <Text>{res}</Text>
 
         </View>

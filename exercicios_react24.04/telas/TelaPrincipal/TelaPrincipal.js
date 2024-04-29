@@ -58,6 +58,8 @@ const TelaPrincipal = (props) => {
 
   return (
     <View style={estilos.tudo}>
+
+      <Text>Bem VIndo</Text>
       <BotaoCustomizado style={estilos.telaVeiculo} onPress={() => props.navigation.navigate(TELAS.TELA_VEICULO)}>
         <Text style={estilos.texto}>Media Consumo de Combustível</Text>
       </BotaoCustomizado>
