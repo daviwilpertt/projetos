@@ -35,7 +35,30 @@ const TelaCalculadora = () => {
             margin: 10,
         },
         select: {
-          backgroundColor: 'green',  
+            backgroundColor: 'green',
+        },
+    })
+
+    const pickerSelectStyles = StyleSheet.create({
+        inputIOS: {
+            fontSize: 16,
+            paddingVertical: 12,
+            paddingHorizontal: 10,
+            borderWidth: 1,
+            borderColor: 'gray',
+            borderRadius: 4,
+            color: 'black',
+            paddingRight: 30,
+        },
+        inputAndroid: {
+            fontSize: 16,
+            paddingHorizontal: 10,
+            paddingVertical: 8,
+            borderWidth: 0.5,
+            borderColor: 'purple',
+            borderRadius: 8,
+            color: 'black',
+            paddingRight: 30,
         },
     })
 
@@ -72,7 +95,7 @@ const TelaCalculadora = () => {
     return (
         <View style={estilos.tudo}>
             <CampoTextoCustomizado style={estilos.input} label='numero 1' value={numero1} onChangeText={setNum1} />
-            <RNPickerSelect style={estilos.select}
+            <RNPickerSelect style={pickerSelectStyles}
                 onValueChange={setCampoOperacao}
                 value={campoOperacao}
                 items={[

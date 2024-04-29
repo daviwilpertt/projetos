@@ -1,9 +1,45 @@
-import { Switch, View, Text } from "react-native"
+import { Switch, View, Text, StyleSheet } from "react-native"
 import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado"
 import React from "react"
 import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado"
+import FontAwesome from '@expo/vector-icons/FontAwesome'
 
 const TelaSalario = () => {
+
+    const estilos = StyleSheet.create({
+        tudo: {
+            flex: 1,
+            alignItems: 'center'
+
+        },
+        icone: {
+            alignItems: 'center'
+        },
+        input: {
+            padding: 10,
+            width: 300,
+            border: '2px solid black',
+            margin: 15,
+            fontSize: 20,
+        },
+        botao: {
+            backgroundColor: 'orange',
+            alignItems: 'center',
+            borderRadius: 40,
+            width: 240,
+            margin: 15
+        },
+        saida: {
+            fontSize: 20,
+            margin: 10,
+        },
+        texto: {
+            fontSize: 20,
+            color: 'black',
+            fontWeight: 'bold',
+            textAlign: 'right',
+        },
+    })
 
     let [salario, setSalario] = React.useState(0)
     let [cargoConfianca, setCargoConfianca] = React.useState(false)
@@ -37,21 +73,22 @@ const TelaSalario = () => {
         
     }
     return (
-        <View>
-            <CampoTextoCustomizado label='salario' value={salario} onChangeText={setSalario} />
+        <View style={estilos.tudo}>
+            <FontAwesome name='money' color='orange' size={64} style={estilos.icone} />
+            <CampoTextoCustomizado style={estilos.input} label='salario' value={salario} onChangeText={setSalario} />
             <Text>cargo de confiança</Text>
             <Switch
-                trackColor={{ false: 'gray', true: 'blue' }}
+                trackColor={{ false: 'gray', true: 'orange' }}
                 thumbColor={'black'}
                 ios_backgroundColor={'black'}
                 onValueChange={setCargoConfianca}
                 value={cargoConfianca}
             />
 
-            <BotaoCustomizado onPress={calcular}>
+            <BotaoCustomizado style={estilos.botao} onPress={calcular}>
                 <Text>calcular</Text>
             </BotaoCustomizado>
-            <Text>{novoSalario}</Text>
+            <Text style={estilos.texto}>{novoSalario}</Text>
         </View>
     )
 }
