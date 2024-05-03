@@ -87,6 +87,10 @@ const TelaPrincipal = (props) => {
       <BotaoCustomizado style={estilos.telaIMC} onPress={() => props.navigation.navigate(TELAS.TELA_IMC)}>
         <Text style={estilos.texto}>calculadora de IMC</Text>
       </BotaoCustomizado>
+
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_LISTA)}>
+        <Text style={estilos.texto}>lista de tarefas</Text>
+      </BotaoCustomizado>
     </View>
   );
 };

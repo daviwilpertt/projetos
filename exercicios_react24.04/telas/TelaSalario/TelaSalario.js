@@ -88,7 +88,7 @@ const TelaSalario = () => {
             <BotaoCustomizado style={estilos.botao} onPress={calcular}>
                 <Text>calcular</Text>
             </BotaoCustomizado>
-            <Text style={estilos.texto}>{novoSalario}</Text>
+            <Text style={estilos.texto}>R${novoSalario}</Text>
         </View>
     )
 }
