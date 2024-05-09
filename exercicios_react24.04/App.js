@@ -11,7 +11,7 @@ import TelaNota from './telas/TelaNota/TelaNota';
 import TelaIMC from './telas/TelaIMC/TelaIMC';
 import TelaSalario from './telas/TelaSalario/TelaSalario';
 import TelaCalculadora from './telas/TelaCalculadora/TelaCalculadora';
-import TelaLista from './telas/TelaLista/TelaLista';
+import TelaListaTarefa from './telas/TelaListaTarefa';
 
 export default function App() {
 
@@ -39,7 +39,7 @@ export default function App() {
           <Stack.Screen name={TELAS.TELA_IMC} component={TelaIMC} />
           <Stack.Screen name={TELAS.TELA_SALARIO} component={TelaSalario} />
           <Stack.Screen name={TELAS.TELA_CALCULADORA} component={TelaCalculadora} />
-          <Stack.Screen name={TELAS.TELA_LISTA} component={TelaLista} /> 
+          <Stack.Screen name={TELAS.TELA_LISTA} component={TelaListaTarefa} /> 
         </Stack.Navigator>
       </NavigationContainer>
     </View>
