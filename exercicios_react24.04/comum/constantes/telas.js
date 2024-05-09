@@ -7,7 +7,7 @@ const TELAS = {
     TELA_IMC: 'Calculadora IMC',
     TELA_SALARIO: 'Calcular Reajuste Salarial',
     TELA_CALCULADORA: 'Calculadora',
-    TELA_LISTA: 'Lista de Tarefas',
+    TELA_LOGIN: 'Tela de Login',
 };
 
 export default TELAS
