@@ -8,6 +8,7 @@ const TELAS = {
     TELA_SALARIO: 'Calcular Reajuste Salarial',
     TELA_CALCULADORA: 'Calculadora',
     TELA_LOGIN: 'Tela de Login',
+    TELA_CADASTRO: 'Tela de Cadastro',
 };
 
 export default TELAS

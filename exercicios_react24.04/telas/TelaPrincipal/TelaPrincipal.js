@@ -91,6 +91,10 @@ const TelaPrincipal = (props) => {
       <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_LOGIN)}>
         <Text style={estilos.texto}>Tela de Login</Text>
       </BotaoCustomizado>
+
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_CADASTRO)}>
+        <Text>tela de cadastro</Text>
+      </BotaoCustomizado>
     </View>
   );
 };

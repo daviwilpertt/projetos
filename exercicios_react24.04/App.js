@@ -12,6 +12,7 @@ import TelaIMC from './telas/TelaIMC/TelaIMC';
 import TelaSalario from './telas/TelaSalario/TelaSalario';
 import TelaCalculadora from './telas/TelaCalculadora/TelaCalculadora';
 import TelaLogin from './telas/TelaLogin';
+import TelaCadastro from './telas/TelaCadastro';
 
 export default function App() {
 
@@ -32,9 +33,10 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Group screenOptions={{headerShown: 'false'}}>
+          <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} />
             <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
           </Stack.Group>
-          <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} />
+          <Stack.Screen name={TELAS.TELA_CADASTRO} component={TelaCadastro} />
           <Stack.Screen name={TELAS.TELA_VEICULO} component={TelaVeiculo} />
           <Stack.Screen name={TELAS.TELA_MOEDA} component={TelaMoeda} />
           <Stack.Screen name={TELAS.TELA_MEDIDA} component={TelaMedida} />

@@ -1,3 +1,0 @@
-export const CHAVES_STORAGE = {
-    LISTA_TAREFAS: 'LISTA_TAREFAS',
-  };
