@@ -1,11 +1,24 @@
-<<<<<<< HEAD
 import { useEffect, useState } from "react";
-import { View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CampoTextoCustomizado from "../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
 import BotaoCustomizado from "../comum/componentes/BotaoCustomizado/BotaoCustomizado";
 
+const estilos = StyleSheet.create({
+    tudo: {
+        flex: 1,
+    },
+    input: {
+        padding: 10,
+        width: 300,
+        border: '2px solid black',
+        margin: 15,
+        fontSize: 20,
+    },
+})
+
 const TelaCadastro = () => {
+
     
     const [usuarios, setUsuarios] = useState([]);
     const [nome, setNome] = useState('');
@@ -43,42 +56,16 @@ const TelaCadastro = () => {
     };
 
     return (
-        <View>
-            <CampoTextoCustomizado label='nome' value={nome} onChangeText={setNome} />
-            <CampoTextoCustomizado label='email' value={email} onChangeText={setEmail} />
-            <CampoTextoCustomizado label='senha' value={senha} onChangeText={setSenha} />
-            <CampoTextoCustomizado label='data de nascimento' value={dtNasc} onChangeText={setDtNasc} />
-            <CampoTextoCustomizado label='cpf' value={cpf} onChangeText={setCpf} />
-            <CampoTextoCustomizado label='telefone' value={telefone} onChangeText={setTelefone} />
+        <ScrollView style={estilos.tudo}>
+            <CampoTextoCustomizado style={estilos.input} label='nome' value={nome} onChangeText={setNome} />
+            <CampoTextoCustomizado style={estilos.input} label='email' value={email} onChangeText={setEmail} />
+            <CampoTextoCustomizado style={estilos.input} label='senha' value={senha} onChangeText={setSenha} />
+            <CampoTextoCustomizado style={estilos.input} label='data de nascimento' value={dtNasc} onChangeText={setDtNasc} />
+            <CampoTextoCustomizado style={estilos.input} label='cpf' value={cpf} onChangeText={setCpf} />
+            <CampoTextoCustomizado style={estilos.input} label='telefone' value={telefone} onChangeText={setTelefone} />
             <BotaoCustomizado onPress={salvarStorage}>enviar</BotaoCustomizado>
-        </View>
+        </ScrollView>
     );
 };
 
 export default TelaCadastro;
-=======
-import { useState } from "react"
-import { View } from "react-native"
-
-
-const TelaCadastro = () => {
-
-    let [usuario, setUsuario] = useState('')
-    let [senha, setSenha] = useState('')
-    let [dtNasc, setDtNasc] = useState('')
-
-
-    const addUsuario = async () => {
-    
-    }
-
-
-        return (
-            <View>
-
-            </View>
-        )
-    }
-
-    export default TelaCadastro
->>>>>>> 97123391be03e6320cb627c671ce7f27b9f1c5e6
