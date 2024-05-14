@@ -97,6 +97,16 @@ const TelaPrincipal = (props) => {
         <Text style={estilos.texto}>calculadora de IMC</Text>
       </BotaoCustomizado>
 
+<<<<<<< HEAD
+=======
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_LOGIN)}>
+        <Text style={estilos.texto}>Tela de Login</Text>
+      </BotaoCustomizado>
+
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_CADASTRO)}>
+        <Text>tela de cadastro</Text>
+      </BotaoCustomizado>
+>>>>>>> 97123391be03e6320cb627c671ce7f27b9f1c5e6
     </View>
   );
 };

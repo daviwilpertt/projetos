@@ -32,10 +32,17 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator>
+<<<<<<< HEAD
           <Stack.Group screenOptions={{ headerShown: 'false' }}>
             <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} />
           </Stack.Group>
           <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
+=======
+          <Stack.Group screenOptions={{headerShown: 'false'}}>
+          <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} />
+            <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
+          </Stack.Group>
+>>>>>>> 97123391be03e6320cb627c671ce7f27b9f1c5e6
           <Stack.Screen name={TELAS.TELA_CADASTRO} component={TelaCadastro} />
           <Stack.Screen name={TELAS.TELA_VEICULO} component={TelaVeiculo} />
           <Stack.Screen name={TELAS.TELA_MOEDA} component={TelaMoeda} />

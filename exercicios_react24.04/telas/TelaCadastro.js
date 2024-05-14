@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { View } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -55,3 +56,29 @@ const TelaCadastro = () => {
 };
 
 export default TelaCadastro;
+=======
+import { useState } from "react"
+import { View } from "react-native"
+
+
+const TelaCadastro = () => {
+
+    let [usuario, setUsuario] = useState('')
+    let [senha, setSenha] = useState('')
+    let [dtNasc, setDtNasc] = useState('')
+
+
+    const addUsuario = async () => {
+    
+    }
+
+
+        return (
+            <View>
+
+            </View>
+        )
+    }
+
+    export default TelaCadastro
+>>>>>>> 97123391be03e6320cb627c671ce7f27b9f1c5e6
