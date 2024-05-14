@@ -52,7 +52,7 @@ const TelaPrincipal = (props) => {
       alignItems: 'center'
     },
     texto: {
-      color: 'white',
+      color: 'black',
     },
   })
 
@@ -60,6 +60,15 @@ const TelaPrincipal = (props) => {
     <View style={estilos.tudo}>
 
       <Text>Bem VIndo</Text>
+
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_LOGIN)}>
+        <Text style={estilos.texto}>Tela de Login</Text>
+      </BotaoCustomizado>
+
+      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_CADASTRO)}>
+        <Text style={estilos.texto}>Tela de Cadastro</Text>
+      </BotaoCustomizado>
+
       <BotaoCustomizado style={estilos.telaVeiculo} onPress={() => props.navigation.navigate(TELAS.TELA_VEICULO)}>
         <Text style={estilos.texto}>Media Consumo de Combustível</Text>
       </BotaoCustomizado>
@@ -88,9 +97,6 @@ const TelaPrincipal = (props) => {
         <Text style={estilos.texto}>calculadora de IMC</Text>
       </BotaoCustomizado>
 
-      <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_LOGIN)}>
-        <Text style={estilos.texto}>Tela de Login</Text>
-      </BotaoCustomizado>
     </View>
   );
 };
