@@ -1,8 +1,9 @@
 import { StyleSheet, View } from "react-native"
 import CampoTextoCustomizado from "../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado"
 import BotaoCustomizado from "../comum/componentes/BotaoCustomizado/BotaoCustomizado"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import TELAS from "../comum/constantes/telas"
+import { buscarStorage } from "./TelaCadastro"
 
 const estilos = StyleSheet.create({
     tudo: {
@@ -38,33 +39,37 @@ const estilos = StyleSheet.create({
         textAlign: 'right',
     },
 })
+
 const TelaLogin = (props) => {
+    const [usuarios, setUsuarios] = useState([]);
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
-
-    let [usuario, setUsuario] = React.useState('')
-    let [senha, setSenha] = React.useState('')
+    useEffect(() => {
+        buscarStorage(setUsuarios);
+    }, []);
 
     const entrar = () => {
-        if (usuario.trim() && senha.trim()) {
-            if (usuario === 'adm' && senha === '123') {
-                props.navigation.navigate(TELAS.TELA_PRINCIPAL)
+        if (email.trim() && senha.trim()) {
+            const usuarioEncontrado = usuarios.find(usuario => usuario.email === email && usuario.senha === senha);
+            if (usuarioEncontrado) {
+                props.navigation.navigate(TELAS.TELA_PRINCIPAL);
+            } else {
+                alert('Erro', 'Usuário ou senha incorretos');
             }
-            else {
-                alert('Usuário ou senha incorretos')
-            }
+        } else {
+            alert('Erro', 'Preencha os dados corretamente');
         }
-        else {
-            alert('Preencha os dados corretamente')
-        }
-    }
+    };
 
     return (
         <View style={estilos.tudo}>
-            <CampoTextoCustomizado style={estilos.input} label='usuario' value={usuario} onChangeText={setUsuario} />
-            <CampoTextoCustomizado style={estilos.input} label='senha' value={senha} onChangeText={setSenha} />
-            <BotaoCustomizado style={estilos.botao} onPress={entrar} >entrar</BotaoCustomizado>
+            <CampoTextoCustomizado style={estilos.input} label='Email' value={email} onChangeText={setEmail} />
+            <CampoTextoCustomizado style={estilos.input} label='Senha' value={senha} onChangeText={setSenha} secureTextEntry />
+            <BotaoCustomizado style={estilos.botao} onPress={entrar}>Entrar</BotaoCustomizado>
         </View>
-    )
-}
+    );
+};
+
 
 export default TelaLogin

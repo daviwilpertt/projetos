@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CampoTextoCustomizado from "../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
 import BotaoCustomizado from "../comum/componentes/BotaoCustomizado/BotaoCustomizado";
+import TELAS from "../comum/constantes/telas";
 
 const estilos = StyleSheet.create({
     tudo: {
@@ -46,15 +47,11 @@ const TelaCadastro = () => {
         await AsyncStorage.setItem('app1', JSON.stringify(usuariosAtualizados));
         setUsuarios(usuariosAtualizados);
         console.log(usuariosAtualizados);
+        props.navigation.navigate(TELAS.TELA_LOGIN)
     };
 
-    const buscarStorage = async () => {
-        const response = await AsyncStorage.getItem('app1');
-        if (response) {
-            setUsuarios(JSON.parse(response));
-        }
-    };
-
+    
+    
     return (
         <ScrollView style={estilos.tudo}>
             <CampoTextoCustomizado style={estilos.input} label='nome' value={nome} onChangeText={setNome} />
@@ -68,4 +65,16 @@ const TelaCadastro = () => {
     );
 };
 
+
 export default TelaCadastro;
+
+export async function buscarStorage(setUsuarios) {
+    try {
+      const response = await AsyncStorage.getItem('app1');
+      if (response) {
+        setUsuarios(JSON.parse(response));
+      }
+    } catch (error) {
+      console.error('Erro ao buscar dados do AsyncStorage:', error);
+    }
+  }
