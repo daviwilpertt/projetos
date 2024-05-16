@@ -12,7 +12,8 @@ import TelaIMC from './telas/TelaIMC/TelaIMC';
 import TelaSalario from './telas/TelaSalario/TelaSalario';
 import TelaCalculadora from './telas/TelaCalculadora/TelaCalculadora';
 import TelaLogin from './telas/TelaLogin';
-import TelaCadastro from './telas/TelaCadastro';
+import TelaCadastro, { buscarStorage } from './telas/TelaCadastro';
+import { useEffect } from 'react';
 
 export default function App() {
 
@@ -24,6 +25,10 @@ export default function App() {
     },
 
   });
+
+  useEffect(() => {
+    buscarStorage();
+}, []);
 
   const Stack = createStackNavigator()
 

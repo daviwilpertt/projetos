@@ -20,7 +20,7 @@ const estilos = StyleSheet.create({
 
 const TelaCadastro = () => {
 
-    
+
     const [usuarios, setUsuarios] = useState([]);
     const [nome, setNome] = useState('');
     const [senha, setSenha] = useState('');
@@ -34,47 +34,48 @@ const TelaCadastro = () => {
     }, []);
 
     const salvarStorage = async () => {
-        const novoUsuario = {
-            nome,
-            senha,
-            email,
-            dtNasc,
-            cpf,
-            telefone,
-        };
-
-        const usuariosAtualizados = [...usuarios, novoUsuario];
-        await AsyncStorage.setItem('app1', JSON.stringify(usuariosAtualizados));
-        setUsuarios(usuariosAtualizados);
-        console.log(usuariosAtualizados);
-        props.navigation.navigate(TELAS.TELA_LOGIN)
-    };
-
-    
-    
-    return (
-        <ScrollView style={estilos.tudo}>
-            <CampoTextoCustomizado style={estilos.input} label='nome' value={nome} onChangeText={setNome} />
-            <CampoTextoCustomizado style={estilos.input} label='email' value={email} onChangeText={setEmail} />
-            <CampoTextoCustomizado style={estilos.input} label='senha' value={senha} onChangeText={setSenha} />
-            <CampoTextoCustomizado style={estilos.input} label='data de nascimento' value={dtNasc} onChangeText={setDtNasc} />
-            <CampoTextoCustomizado style={estilos.input} label='cpf' value={cpf} onChangeText={setCpf} />
-            <CampoTextoCustomizado style={estilos.input} label='telefone' value={telefone} onChangeText={setTelefone} />
-            <BotaoCustomizado onPress={salvarStorage}>enviar</BotaoCustomizado>
-        </ScrollView>
-    );
+        const usuariosAtuais = usuarios.slice()
+        if (nome && senha && email && dtNasc && cpf && telefone) {
+            const novoUsuario = {
+                nome,
+                senha,
+                email,
+                dtNasc,
+                cpf,
+                telefone,
+            };
+            usuariosAtuais.push(novoUsuario);
+            await AsyncStorage.setItem('app1', JSON.stringify(usuariosAtuais));
+            setUsuarios(usuariosAtuais);
+            console.log(usuariosAtuais);
+        }
+        else {
+            alert('Preencha todos os campos!');
+        }
+    }
+           
+        return (
+    <ScrollView style={estilos.tudo}>
+        <CampoTextoCustomizado style={estilos.input} label='nome' value={nome} onChangeText={setNome} />
+        <CampoTextoCustomizado style={estilos.input} label='email' value={email} onChangeText={setEmail} />
+        <CampoTextoCustomizado style={estilos.input} label='senha' value={senha} onChangeText={setSenha} />
+        <CampoTextoCustomizado style={estilos.input} label='data de nascimento' value={dtNasc} onChangeText={setDtNasc} />
+        <CampoTextoCustomizado style={estilos.input} label='cpf' value={cpf} onChangeText={setCpf} />
+        <CampoTextoCustomizado style={estilos.input} label='telefone' value={telefone} onChangeText={setTelefone} />
+        <BotaoCustomizado onPress={salvarStorage}>enviar</BotaoCustomizado>
+    </ScrollView>
+);
 };
-
 
 export default TelaCadastro;
 
 export async function buscarStorage(setUsuarios) {
     try {
-      const response = await AsyncStorage.getItem('app1');
-      if (response) {
-        setUsuarios(JSON.parse(response));
-      }
+        const response = await AsyncStorage.getItem('app1');
+        if (response) {
+            setUsuarios(JSON.parse(response));
+        }
     } catch (error) {
-      console.error('Erro ao buscar dados do AsyncStorage:', error);
+        console.error('Erro ao buscar dados do AsyncStorage:', error);
     }
-  }
+}

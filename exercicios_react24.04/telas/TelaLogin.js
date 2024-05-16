@@ -44,7 +44,7 @@ const TelaLogin = (props) => {
     const [usuarios, setUsuarios] = useState([]);
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-
+    
     useEffect(() => {
         buscarStorage(setUsuarios);
     }, []);
@@ -55,10 +55,10 @@ const TelaLogin = (props) => {
             if (usuarioEncontrado) {
                 props.navigation.navigate(TELAS.TELA_PRINCIPAL);
             } else {
-                alert('Erro', 'Usuário ou senha incorretos');
+                alert('email ou senha incorretos');
             }
         } else {
-            alert('Erro', 'Preencha os dados corretamente');
+            alert('Preencha os dados corretamente');
         }
     };
 
