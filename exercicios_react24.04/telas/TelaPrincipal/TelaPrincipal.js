@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import TELAS from '../../comum/constantes/telas';
 import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
+import CORES from '../../comum/constantes/cores';
 
 const TelaPrincipal = (props) => {
   console.log(props);
@@ -51,6 +52,17 @@ const TelaPrincipal = (props) => {
       borderBottomEndRadius: 100,
       alignItems: 'center'
     },
+    telaLogin: {
+      backgroundColor: CORES.FUNDO_CLARO,
+      borderRadius: 100,
+      alignItems: 'center'
+    },
+    telaCadastro: {
+      backgroundColor: CORES.FUNDO_ESCURO,
+      borderTopStartRadius: 100,
+      borderBottomEndRadius: 100,
+      alignItems: 'center'
+    },
     texto: {
       color: 'black',
     },
@@ -67,11 +79,11 @@ const TelaPrincipal = (props) => {
 
         <Text>Bem VIndo</Text>
 
-        <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_LOGIN)}>
+        <BotaoCustomizado style={estilos.telaLogin} onPress={() => props.navigation.navigate(TELAS.TELA_LOGIN)}>
           <Text style={estilos.texto}>Tela de Login</Text>
         </BotaoCustomizado>
 
-        <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_CADASTRO)}>
+        <BotaoCustomizado style={estilos.telaCadastro} onPress={() => props.navigation.navigate(TELAS.TELA_CADASTRO)}>
           <Text style={estilos.texto}>Tela de Cadastro</Text>
         </BotaoCustomizado>
 
@@ -103,13 +115,7 @@ const TelaPrincipal = (props) => {
           <Text style={estilos.texto}>calculadora de IMC</Text>
         </BotaoCustomizado>
 
-        <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_LOGIN)}>
-          <Text style={estilos.texto}>Tela de Login</Text>
-        </BotaoCustomizado>
-
-        <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_CADASTRO)}>
-          <Text>tela de cadastro</Text>
-        </BotaoCustomizado>
+        
       </View>
     </ScrollView>
   );
