@@ -37,7 +37,6 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator>
-
           <Stack.Group screenOptions={{ headerShown: 'false' }}>
             <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} />
           </Stack.Group>

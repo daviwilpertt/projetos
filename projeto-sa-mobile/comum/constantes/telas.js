@@ -1,8 +1,6 @@
-const TELAS = {
-  TELA_PRINCIPAL: 'TELA_PRINCIPAL',
-  TELA_CONTADOR: 'TELA_CONTADOR',
-  TELA_FORMULARIO: 'TELA_FORMULARIO',
-  TELA_VEICULO: 'TELA_VEICULO',
-};
-
-export default TELAS;
+const TELAS={
+    TELA_PRINCIPAL : 'TELA PRINCIPAL',
+    TELA_LOGIN: 'TELA LOGIN',
+    TELA_CADASTRO: 'tela cadastro',
+   };
+   export default TELAS;

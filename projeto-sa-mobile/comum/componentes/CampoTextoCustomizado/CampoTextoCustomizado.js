@@ -6,13 +6,16 @@ const CampoTextoCustomizado = (props) => {
     const estilos = StyleSheet.create({
         input: {
             border: '1px solid black',
-        }
+        },
+        texto: {
+            fontSize: 20,
+        },
     })
     const [campoNome, setCampoNome] = React.useState('')
 
     return (
         <View>
-            <Text>{props.label}</Text>
+            <Text style={estilos.texto}>{props.label}</Text>
             <TextInput style={estilos.input} onChangeText={setCampoNome} value={campoNome} {...props} />
         </View>
     )
