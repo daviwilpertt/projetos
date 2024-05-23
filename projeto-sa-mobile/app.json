@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "aulas-mobile-senai",
-    "slug": "aulas-mobile-senai",
+    "name": "projeto-mobile-sa",
+    "slug": "projeto-mobile-sa",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

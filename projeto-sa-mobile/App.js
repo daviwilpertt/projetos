@@ -1,37 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import CORES from './comum/constantes/cores';
-import TELAS from './comum/constantes/telas';
-import TelaContador from './telas/TelaContador/TelaContador';
-import TelaPrincipal from './telas/TelaPrincipal/TelaPrincipal';
-import TelaFormulario from './telas/TelaFormulario/TelaFormulario';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import TelaVeiculo from './telas/TelaVeiculo/TelaVeiculo';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import TELAS from './comum/constantes/telas';
+import TelaLogin from './telas/TelaLogin';
+import { useEffect } from 'react';
+import TelaCadastro from './telas/TelaCadastro';
+import TelaPrincipal from './telas/TelaPrincipal';
+
+// useEffect(() => {
+//   buscarStorage();
+// }, []);
 
 const Stack = createStackNavigator();
 
-const estilos = StyleSheet.create({
-  todoApp: {
-    flex: 1,
-    backgroundColor: CORES.FUNDO_PADRAO,
-
-  },
-});
-
 export default function App() {
   return (
-    <View style={estilos.todoApp}>
+    <View style={styles.container}>
+      <StatusBar style='auto' />
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name={TELAS.TELA_CADASTRO} component={TelaCadastro} />
+          <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
           <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} />
-          <Stack.Screen name={TELAS.TELA_CONTADOR} component={TelaContador} />
-          <Stack.Screen name={TELAS.TELA_FORMULARIO} component={TelaFormulario} />
-          <Stack.Screen name={TELAS.TELA_VEICULO} component={TelaVeiculo} />
         </Stack.Navigator>
       </NavigationContainer>
-
-      <StatusBar style='auto' />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    textAlign: 'center'
+  },
+});
